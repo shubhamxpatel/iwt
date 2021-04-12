@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+        Web Page Ranking Using SEO Suggester
+    </h1>
+
+    <div class="container">
+        <center>
+            <form action="/" method="get">
+                <input type="text" name="search" id="search" placeholder="enter text to search" required value="<%= psearch%>">
+                <input type="submit" value="SEARCH">
+            </form>
+        </center>
+
+    </div>
+
+</body>
+<script>
+    async function fun() {
+
+
+        const response = await fetch('/', {
+            method: "GET",
+            headers: {
+                "Access-Control-Allow-Origin": 'http://localhost:3000'
+            }
+
+        });
+        const text = await response.text();
+        console.log(` <h1>
+        Web Page Ranking Using SEO Suggester
+    </h1>`.match(/(?<=\<h1>).*(?=\<\/h1>)/));
+    }
+    fun()
+</script>
+
+</html>

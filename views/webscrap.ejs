@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 10px;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 50px;
+            justify-content: space-around;
+        }
+        
+        p {
+            display: block;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/users" method="get">
+        <input type="text" name="link" id="link">
+        <input type="submit" value="search">
+    </form>
+    <div id="p">
+
+    </div>
+
+</body>
+<script>
+    window.onload = function() {
+        var x = `<%- data %>`.split('$').join("</br>")
+            //console.log(x)
+        document.getElementById("p").innerHTML = x
+
+        // x.forEach((item) => {
+        //     // if (item.includes('content') || item.includes('description')) {
+        //     let p = document.createElement('p')
+        //     p.innerText = item
+        //     document.body.appendChild(p)
+        //         // }
+        // })
+    }
+</script>
+
+</html>
